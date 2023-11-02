@@ -48,6 +48,5 @@ namespace Starter
             this.NewProfit = 63000000.0m;
         }
 
-
     }
 }
