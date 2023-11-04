@@ -52,11 +52,18 @@ namespace Starter
         {
             string greetings = $"Dear {this.CustomerName},\n";
             string pOne = $"As a customer of our {this.CurrentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.\n\n";
-            string pTwo = $"Currently, you own {this.CurrentShares} shares at a return of {CurrentReturn}{"%".PadLeft(2)}.\n\n";
-            string pThree = $"Our new product, {this.NewProduct} offers a return of {this.NewReturn}{"%".PadLeft(2)}.\tGiven your current volume, your potential profit would be {this.NewProfit:C2}.\n\n";
+            string pTwo = $"Currently, you own {this.CurrentShares} shares at a return of {this.CurrentReturn:P2}.\n\n";
+            string pThree = $"Our new product, {this.NewProduct} offers a return of {this.NewReturn:P2}.  Given your current volume, your potential profit would be {this.NewProfit:C2}.\n\n";
             string pFour = $"Here's a quick comparison:\n\n";
+            string currentValuesOne = this.CurrentProduct.PadRight(20);
+            string currentValuesTwo = $"{this.CurrentReturn:P2}".PadRight(10);
+            string currentValuesThree = $"{this.CurrentProfit:C2}\n";
 
-            Console.WriteLine(greetings + pOne + pTwo + pThree + pFour);
+            string newValuesOne = $"{this.NewProduct.PadRight(20)}";
+            string newValuesTwo = $"{this.NewReturn:P2}".PadRight(10);
+            string newValuesThree = $"{this.NewProfit:C2}\n";
+
+            Console.WriteLine(greetings + pOne + pTwo + pThree + pFour + currentValuesOne + currentValuesTwo + currentValuesThree + newValuesOne + newValuesTwo + newValuesThree);
         }
 
     }
