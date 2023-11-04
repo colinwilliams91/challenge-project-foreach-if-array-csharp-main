@@ -48,5 +48,16 @@ namespace Starter
             this.NewProfit = 63000000.0m;
         }
 
+        public void PrintOut()
+        {
+            string greetings = $"Dear {this.CustomerName},\n";
+            string pOne = $"As a customer of our {this.CurrentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.\n\n";
+            string pTwo = $"Currently, you own {this.CurrentShares} shares at a return of {CurrentReturn}{"%".PadLeft(2)}.\n\n";
+            string pThree = $"Our new product, {this.NewProduct} offers a return of {this.NewReturn}{"%".PadLeft(2)}.\tGiven your current volume, your potential profit would be {this.NewProfit:C2}.\n\n";
+            string pFour = $"Here's a quick comparison:\n\n";
+
+            Console.WriteLine(greetings + pOne + pTwo + pThree + pFour);
+        }
+
     }
 }
